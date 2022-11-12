@@ -1,9 +1,7 @@
 @import '../../styles/media';
+@import '../../styles/colors';
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   padding: 30px 70px;
   background: url('../../assets/bg-phone.jpg') center (center / cover) no-repeat;
   @include media-breakpoint-down(sm) {
@@ -23,9 +21,10 @@
       position: relative;
       z-index: 5;
       transform: skewX(-50deg);
-      border: 2px solid #d7c1c0;
+      border: 2px solid;
+      border-color: $border-color;
       overflow: hidden;
-      background-color: rgba(211, 211, 211, 0.5);
+      background-color: $input-bg;
       cursor: text;
       @include media-breakpoint-down(sm) {
         transform: skewX(0deg);
@@ -36,12 +35,12 @@
       width: 400px;
       padding: 20px 5px 20px 40px;
       background-color: transparent !important;
-      color: #b3b3b3;
+      color: $text-input;
       border: none;
       transform: skewX(50deg);
       outline: none;
       &::placeholder {
-        color: #b3b3b3;
+        color: $text-input;
       }
       @include media-breakpoint-down(lg) {
         width: 300px;
@@ -57,12 +56,13 @@
     }
     button {
       position: relative;
-      z-index: -1;
+      z-index: 1;
       transform: skewX(-50deg);
       padding: 20px 40px;
-      border: 2px solid #d7c1c0;
-      background-color: #fe0000;
-      color: #f7fefe;
+      border: 2px solid;
+      border-color: $border-color;
+      background-color: $button-bg;
+      color: $button-color;
       @include media-breakpoint-down(lg) {
         padding: 15px 30px;
       }

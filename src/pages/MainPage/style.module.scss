@@ -1,0 +1,21 @@
+@import '../../styles/media';
+@import '../../styles/colors';
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  .validation {
+    height: 30px;
+    text-align: center;
+  }
+  .notice {
+    height: 30px;
+    text-align: center;
+    color: $notice-color;
+  }
+}

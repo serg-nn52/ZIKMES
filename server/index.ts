@@ -8,17 +8,19 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 const corsReq = cors();
 
-app.post("/api/question", corsReq, jsonParser, (req, res) => {
+app.post("/api/phoneNumber", corsReq, jsonParser, (req, res) => {
   try {
     if (!req.body) {
       return res.status(401).send();
     }
 
     const {
-      body: { question },
+      body: { phone },
     } = req;
-    if (question) {
-      res.status(200).send(question);
+    if (phone) {
+      setTimeout(() => {
+        res.status(200).send(phone);
+      }, 100);
     } else {
       res.sendStatus(400);
     }
