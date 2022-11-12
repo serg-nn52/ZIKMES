@@ -1,3 +1,92 @@
-.form {
-  margin-top: 10px;
+@import '../../styles/media';
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 70px;
+  background: url('../../assets/bg-phone.jpg') center (center / cover) no-repeat;
+  @include media-breakpoint-down(sm) {
+    width: calc(100% - 10px);
+    padding: 30px 10px;
+  }
+  .form {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+      justify-content: stretch;
+    }
+    label {
+      position: relative;
+      z-index: 5;
+      transform: skewX(-50deg);
+      border: 2px solid #d7c1c0;
+      overflow: hidden;
+      background-color: rgba(211, 211, 211, 0.5);
+      cursor: text;
+      @include media-breakpoint-down(sm) {
+        transform: skewX(0deg);
+        width: 60%;
+      }
+    }
+    input {
+      width: 400px;
+      padding: 20px 5px 20px 40px;
+      background-color: transparent !important;
+      color: #b3b3b3;
+      border: none;
+      transform: skewX(50deg);
+      outline: none;
+      &::placeholder {
+        color: #b3b3b3;
+      }
+      @include media-breakpoint-down(lg) {
+        width: 300px;
+      }
+      @include media-breakpoint-down(md) {
+        width: 200px;
+        padding: 10px 20px;
+      }
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+        transform: skewX(0deg);
+      }
+    }
+    button {
+      position: relative;
+      z-index: -1;
+      transform: skewX(-50deg);
+      padding: 20px 40px;
+      border: 2px solid #d7c1c0;
+      background-color: #fe0000;
+      color: #f7fefe;
+      @include media-breakpoint-down(lg) {
+        padding: 15px 30px;
+      }
+      @include media-breakpoint-down(md) {
+        padding: 10px 20px;
+      }
+      @include media-breakpoint-down(sm) {
+        transform: skewX(0deg);
+        width: 40%;
+      }
+      svg {
+        position: relative;
+        top: 1px;
+        margin-left: 5px;
+      }
+      p {
+        display: flex;
+        margin: 0;
+        justify-content: center;
+        transform: skewX(50deg);
+        @include media-breakpoint-down(sm) {
+          transform: skewX(0deg);
+        }
+      }
+    }
+  }
 }
